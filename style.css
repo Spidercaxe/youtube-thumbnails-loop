@@ -1,61 +1,33 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#thumbnails-wrapper {
+    overflow: hidden;
+    width: 100%;
 }
 
-header {
-    text-align: center;
-    margin-top: 50px;
-}
-
-h1 {
-    font-size: 2rem;
-    color: #333;
-}
-
-p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Thumbnails Container */
 #thumbnails-container {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 15px;
-    overflow-x: auto;
-    padding: 20px;
-    animation: scroll-thumbnails 30s linear infinite;
-    margin-top: 20px;
+    gap: 16px;
+    width: max-content;
+    animation: scroll-thumbnails 60s linear infinite;
 }
 
-/* Styling for each Thumbnail */
 .thumbnail {
-    width: 120px;
+    width: 160px;
     height: 90px;
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .thumbnail:hover {
     transform: scale(1.1);
 }
 
-/* Animation for Horizontal Scrolling */
 @keyframes scroll-thumbnails {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(-100%);
+    to {
+        transform: translateX(-50%);
     }
 }
